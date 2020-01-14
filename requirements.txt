@@ -1,0 +1,4 @@
+praw
+gtts
+moviepy
+scipy
