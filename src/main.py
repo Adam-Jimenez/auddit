@@ -1,13 +1,15 @@
 from tasks.scrape_reddit.task import get_hottest_post
 from tasks.text_to_speech.task import tts
 from tasks.generate_video.task import generate_video
+from tasks.upload_video.task import upload_video
 
 class Pipeline:
     def __init__(self):
         self.tasks = [
             get_hottest_post,
             tts,
-            generate_video
+            generate_video,
+            upload_video
         ]
         self.context = dict()
 

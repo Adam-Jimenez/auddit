@@ -1,3 +1,5 @@
+request.token
+client_secrets.json
 audio_data/*.mp3
 video_data/*.mp4
 # Created by https://www.gitignore.io/api/python

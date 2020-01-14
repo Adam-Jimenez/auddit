@@ -41,5 +41,6 @@ def generate_video(context):
     background_audio_clip = background_audio_clip.fx(afx.volumex, 0.15)
     video.audio = CompositeAudioClip([video.audio, background_audio_clip])
     path = f"video_data/{uuid.uuid4()}.mp4"
+    context["video_path"] = path
     video.write_videofile(path, fps=24, codec='libx264', threads=4)
 

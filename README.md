@@ -6,6 +6,7 @@ Tired of those Reddit text-to-speech videos on Youtube? Now you can make your ow
 
 - Python 3
 - Everything in the requirements.txt file
+- https://github.com/porjo/youtubeuploader
 
 ## Setup
 
@@ -17,6 +18,8 @@ Then add the following environnement variables:
 - REDDIT_CLIENT_SECRET
 
 (Read about how to create a Reddit application to get those).
+
+You also need to register an application on the Google OAuthv2 API. [Here's](https://developers.google.com/youtube/v3/guides/uploading_a_video) a guide.
 
 ## Running
 
@@ -30,7 +33,7 @@ Then we pipe the text to the text-to-speech task, that generates an audio file u
 
 Then, we send the text and the audio to the video generation tasks, which uses [PyMovie](https://zulko.github.io/moviepy/) to make a video with background music, the text-to-speech clips and the text.
 
-All that is left is to [upload to Youtube using the Google API](https://developers.google.com/youtube/v3/guides/uploading_a_video).
+All that is left is to [upload to Youtube using the Google API](https://github.com/porjo/youtubeuploader).
 
 ## Why
 

@@ -38,7 +38,6 @@ def get_hottest_post(context):
          
          post_data = Post(title, comments)
          context["post"] = post_data
-         return post_data
 
 if __name__ == '__main__':
    get_hottest_post()
