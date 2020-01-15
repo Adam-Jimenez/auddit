@@ -2,6 +2,10 @@
 
 Tired of those Reddit text-to-speech videos on Youtube? Now you can make your own, automatically!
 
+Official Auddit Youtube Channel: https://www.youtube.com/channel/UCMi63vc1Timv8dfrmcrrdFQ
+
+![thumbnail](./doc/test.png)
+
 ## Dependencies
 
 - Python 3
