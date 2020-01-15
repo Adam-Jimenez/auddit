@@ -18,14 +18,17 @@ def get_hottest_post(context):
    for post in hot_posts:
       if not post.stickied and post.over_18 == nsfw:
          title = post.title
+         if len(title) >= 100:
+            continue # busts youtube title limit
          comments = []
-         post.comment_limit = comment_limit
          for comment in post.comments:
             if isinstance(comment, MoreComments):
                continue
             if comment.stickied:
                continue
             comment_body = comment.body
+            if comment_body == "[Removed]":
+               continue
             comment_reply = ""
             comment.replies.replace_more(limit=1)
             if len(comment.replies) > 0:
@@ -35,6 +38,8 @@ def get_hottest_post(context):
                comment_reply = reply.body
             comment_output = Comment(comment_body, comment_reply)
             comments.append(comment_output)
+            if len(comments) >= comment_limit:
+               break
          
          post_data = Post(title, comments)
          context["post"] = post_data

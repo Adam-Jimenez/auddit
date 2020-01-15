@@ -37,10 +37,12 @@ def generate_video(context):
         clips.append(comment_clip)
     video = concatenate_videoclips(clips)
     background_audio_clip = AudioFileClip(BGM_PATH)
-    background_audio_clip = background_audio_clip.set_end(video.duration)
+    background_audio_clip = afx.audio_loop(background_audio_clip, duration=video.duration)
     background_audio_clip = background_audio_clip.fx(afx.volumex, 0.15)
     video.audio = CompositeAudioClip([video.audio, background_audio_clip])
-    path = f"video_data/{uuid.uuid4()}.mp4"
+    video_id = uuid.uuid4()
+    path = f"video_data/{video_id}.mp4"
     context["video_path"] = path
+    context["video_id"] = video_id
     video.write_videofile(path, fps=24, codec='libx264', threads=4)
 
