@@ -21,7 +21,7 @@ Then add the following environnement variables:
 - REDDIT_CLIENT_ID
 - REDDIT_CLIENT_SECRET
 
-(Read about how to create a Reddit application to get those).
+Read about how to [create a Reddit application](https://ssl.reddit.com/prefs/apps/) to get those.
 
 You also need to register an application on the Google OAuthv2 API. [Here's](https://developers.google.com/youtube/v3/guides/uploading_a_video) a guide. You need to put the resulting `client_secrets.json` in the root of the project.
 
