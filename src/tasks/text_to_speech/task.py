@@ -1,13 +1,16 @@
 import uuid
 import time
 import requests
+import random
 from gtts import gTTS
+
+voices = ["Matthew", "Joey", "Kendra", "Salli"]
 
 def save_tts(text):
    try:
       form_data = {
             "msg": text,
-            "lang": "Matthew",
+            "lang": random.choice(voices),
             "source": "ttsmp3"
       }
       json = requests.post("https://ttsmp3.com/makemp3_new.php", form_data).json()

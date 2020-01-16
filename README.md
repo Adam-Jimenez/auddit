@@ -31,11 +31,13 @@ You also need to register an application on the Google OAuthv2 API. [Here's](htt
 
 ## How it works
 
-Using the [Reddit API](https://www.reddit.com/dev/api), more specifically the [Python Wrapper for the api](https://github.com/praw-dev/praw), we can query for hot posts from any subreddit. We then list a configurable amount of comments and replies and put all this data in a Post object. 
+Using the [Python Reddit API Wrapper](https://github.com/praw-dev/praw), we can query for hot posts from any subreddit. 
 
-Then we pipe the text to the text-to-speech task, that generates an audio file using the Google Text-To-Speech API, more specifically the [gTTS Python Wrapper](https://gtts.readthedocs.io/en/latest/index.html). 
+Then we pipe the text to the text-to-speech task, that generates an audio file using either ttsmp3.com or the [Google Text-to-Speech Python Wrapper](https://gtts.readthedocs.io/en/latest/index.html). We prefer ttsmp3.com for the quality and use gTTS as a fallback if we get rate-limited.
 
 Then, we send the text and the audio to the video generation tasks, which uses [PyMovie](https://zulko.github.io/moviepy/) to make a video with background music, the text-to-speech clips and the text.
+
+Then we generate a thumbnail with the goal of clickbaiting the viewers with [Pillow](https://pillow.readthedocs.io/en/stable/)
 
 All that is left is to [upload to Youtube using the Google API](https://github.com/porjo/youtubeuploader).
 

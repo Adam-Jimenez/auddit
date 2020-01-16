@@ -18,8 +18,8 @@ def get_hottest_post(context):
    for post in hot_posts:
       if not post.stickied and post.over_18 == nsfw:
          title = post.title
-         if len(title) >= 100:
-            continue # busts youtube title limit
+         if len(title + f" (/r/{subreddit})") >= 100:
+            continue # respect youtube limit of 100
          comments = []
          for comment in post.comments:
             if isinstance(comment, MoreComments):
