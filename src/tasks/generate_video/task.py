@@ -6,6 +6,7 @@ TITLE_FONT_SIZE = 30
 FONT_SIZE = 30
 TITLE_FONT_COLOR = 'white'
 BGM_PATH = 'assets/bgm.mp3'
+STATIC_PATH = 'assets/static.mp4'
 SIZE = (1280, 720)
 BG_COLOR = (16,16,16)
 
@@ -22,6 +23,8 @@ def generate_clip(text, audio_path, title=False):
     clip = CompositeVideoClip([color_clip, txt_clip])
     clip.audio = audio_clip
     clip.duration = audio_clip.duration
+    static_clip = VideoFileClip(STATIC_PATH)
+    clip = concatenate_videoclips([clip, static_clip])
     return clip
 
 def generate_video(context):

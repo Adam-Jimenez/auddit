@@ -1,20 +1,25 @@
 import uuid
+import time
 import requests
 from gtts import gTTS
 
 def save_tts(text):
-   form_data = {
-         "msg": text,
-         "lang": "Matthew",
-         "source": "ttsmp3"
-   }
-   json = requests.post("https://ttsmp3.com/makemp3_new.php", form_data).json()
-   url = json["URL"]
-   filename = json["MP3"]
-   mp3_file = requests.get(url)
-   path = f"audio_data/{filename}"
-   open(path, "wb").write(mp3_file.content)
-   return path
+   try:
+      form_data = {
+            "msg": text,
+            "lang": "Matthew",
+            "source": "ttsmp3"
+      }
+      json = requests.post("https://ttsmp3.com/makemp3_new.php", form_data).json()
+      url = json["URL"]
+      filename = json["MP3"]
+      mp3_file = requests.get(url)
+      path = f"audio_data/{filename}"
+      open(path, "wb").write(mp3_file.content)
+      return path
+   except:
+      print("TTS Rate limit reached - Fallback on Google text-to-speech")
+      return save_gtts(text)
 
 def save_gtts(text):
    tts = gTTS(text=text, lang='en')
