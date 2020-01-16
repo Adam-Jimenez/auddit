@@ -27,7 +27,7 @@ def get_hottest_post(context):
             if comment.stickied:
                continue
             comment_body = comment.body
-            if comment_body == "[Removed]":
+            if comment_body == "[removed]":
                continue
             comment_reply = ""
             comment.replies.replace_more(limit=1)
@@ -43,6 +43,7 @@ def get_hottest_post(context):
          
          post_data = Post(title, comments)
          context["post"] = post_data
+         return
 
 if __name__ == '__main__':
    get_hottest_post()

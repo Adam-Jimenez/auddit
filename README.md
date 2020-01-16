@@ -41,7 +41,6 @@ All that is left is to [upload to Youtube using the Google API](https://github.c
 
 ## TODO
 
-- Try to use https://ttsmp3.com/ for the text-to-speech, the voice sounds nice.
 - Setup a cron job to upload every day
 
 ## Why

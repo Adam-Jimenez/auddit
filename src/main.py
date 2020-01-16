@@ -12,7 +12,7 @@ class Pipeline:
             tts,
             generate_video,
             generate_thumbnail,
-            upload_video,
+            # upload_video,
             # cleanup
         ]
         self.context = dict()
