@@ -2,9 +2,9 @@ import os
 import glob
 
 paths = [
-    "./thumbnails/*.png",
-    "./video_data/*.mp4",
-    "./audio_data/*.mp3",
+    "./data/thumbnails/*.png",
+    "./data/video/*.mp4",
+    "./data/audio/*.mp3",
 ]
 
 def cleanup(context):
