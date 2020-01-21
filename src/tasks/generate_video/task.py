@@ -9,6 +9,7 @@ BGM_PATH = 'assets/bgm.mp3'
 STATIC_PATH = 'assets/static.mp4'
 SIZE = (1280, 720)
 BG_COLOR = (16,16,16)
+VIDEO_PATH = "data/video/"
 
 def generate_clip(text, audio_path, title=False):
     color_clip = ColorClip(SIZE, BG_COLOR)
@@ -44,7 +45,7 @@ def generate_video(context):
     background_audio_clip = background_audio_clip.fx(afx.volumex, 0.15)
     video.audio = CompositeAudioClip([video.audio, background_audio_clip])
     video_id = uuid.uuid4()
-    path = f"video_data/{video_id}.mp4"
+    path = f"{VIDEO_PATH}{video_id}.mp4"
     context["video_path"] = path
     context["video_id"] = video_id
     video.write_videofile(path, fps=24, codec='libx264', threads=4)

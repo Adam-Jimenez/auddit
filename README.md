@@ -29,6 +29,16 @@ You also need to register an application on the Google OAuthv2 API. [Here's](htt
 
 `python src/main.py`
 
+## Testing
+
+All tests:
+
+`python -m unittest`
+
+Single test:
+
+`python -m unittest test/test_reddit.py`
+
 ## How it works
 
 Using the [Python Reddit API Wrapper](https://github.com/praw-dev/praw), we can query for hot posts from any subreddit. 

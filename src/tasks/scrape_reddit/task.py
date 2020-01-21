@@ -18,7 +18,7 @@ def get_hottest_post(context):
    for post in hot_posts:
       if not post.stickied and post.over_18 == nsfw:
          title = post.title
-         if len(title + f" (/r/{subreddit})") >= 100:
+         if len(title) >= 100:
             continue # respect youtube limit of 100
          comments = []
          for comment in post.comments:
@@ -42,6 +42,8 @@ def get_hottest_post(context):
                break
          
          post_data = Post(title, comments)
+         post_data.score = post.score
+         post_data.num_comments = post.num_comments
          context["post"] = post_data
          return
 

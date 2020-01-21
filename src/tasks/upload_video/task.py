@@ -6,9 +6,9 @@ def upload_video(context):
     video_path = context["video_path"]
     thumbnail_path = context["thumbnail_path"]
     title = post.title
-    title = title + f" (/r/{subreddit})"
+    description = title + f" (/r/{subreddit})"
 
-    args = ("./bin/youtubeuploader_linux_amd64", "-filename", video_path, "-title", title, "-description", title, 
+    args = ("./bin/youtubeuploader_linux_amd64", "-filename", video_path, "-title", title, "-description", description, 
             "-thumbnail", thumbnail_path, "-privacy", "public")
     popen = subprocess.Popen(args, stdout=subprocess.PIPE)
     popen.wait()
