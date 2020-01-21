@@ -51,10 +51,6 @@ Then we generate a thumbnail with the goal of clickbaiting the viewers with [Pil
 
 All that is left is to [upload to Youtube using the Google API](https://github.com/porjo/youtubeuploader).
 
-## TODO
-
-- Setup a cron job to upload every day
-
 ## Why
 
 because i can
