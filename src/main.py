@@ -25,4 +25,4 @@ class Pipeline:
 
 if __name__ == "__main__":
     pipeline = Pipeline()
-    pipeline.execute(subreddit='askreddit', nsfw=True, comment_limit=10)
+    pipeline.execute(subreddit='askreddit', nsfw=False, comment_limit=20)
