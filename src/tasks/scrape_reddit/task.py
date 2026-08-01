@@ -37,7 +37,7 @@ def get_hottest_post(context):
                   continue
                comment_reply = reply.body
             comment_output = Comment(comment_body, comment_reply)
-            comment_output.author = comment.author.name
+            comment_output.author = comment.author.name if comment.author else "[deleted]"
             comment_output.score = comment.score
             comments.append(comment_output)
             if len(comments) >= comment_limit:
